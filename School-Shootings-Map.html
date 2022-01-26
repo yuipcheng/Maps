@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type='text/javascript'
+        src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[your-api-key]'
+        async defer></script>
+
+    <!-- ref: https://docs.microsoft.com/en-us/bingmaps/v8-web-control/map-control-concepts/pushpins/pushpin-hover-style: -->
+
+    <script type='text/javascript'>
+
+        function GetMap() {
+            var data = [
+            {
+                "DATE": "11/12/1840",
+                "SCHOOL": "UNIVERSITY OF VIRGINIA, Charlottesville, VA",
+                "LATITUDE": 39.952153,
+                "LONGITUDE": -75.193632,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/02/1853",
+                "SCHOOL": "Louisville, Kentucky",
+                "LATITUDE": 38.27477,
+                "LONGITUDE": -85.760583,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "08/16/1856",
+                "SCHOOL": "Florence. Alabama",
+                "LATITUDE": 34.811005,
+                "LONGITUDE": -87.674577,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "7/08/1858",
+                "SCHOOL": "Sabbath School gathering, Baltimore, Maryland",
+                "LATITUDE": 39.32872,
+                "LONGITUDE": -76.617074,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/21/1860",
+                "SCHOOL": "Todd County, Kentucky",
+                "LATITUDE": 36.845128,
+                "LONGITUDE": -87.169712,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/06/1864",
+                "SCHOOL": "Pyfer's Schoolhouse Ashland County, Ohio",
+                "LATITUDE": 40.841914,
+                "LONGITUDE": -82.358719,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/16/1867",
+                "SCHOOL": "Knights Ferry, California",
+                "LATITUDE": 37.821609,
+                "LONGITUDE": -120.668321,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "4/02/1867",
+                "SCHOOL": "St. John's seminary, Madison. Florida",
+                "LATITUDE": 34.241929,
+                "LONGITUDE": -119.004309,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/27/1871",
+                "SCHOOL": "Knoxville, Tennessee",
+                "LATITUDE": 36.002586,
+                "LONGITUDE": -83.953965,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/20/1874",
+                "SCHOOL": "Agency, Montana",
+                "LATITUDE": 48.262494,
+                "LONGITUDE": -109.781211,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/09/1874",
+                "SCHOOL": "Cumberland University, Lebannon, Tennessee",
+                "LATITUDE": 36.205438,
+                "LONGITUDE": -86.299068,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/01/1881",
+                "SCHOOL": "Santa Monica, California",
+                "LATITUDE": 34.022994,
+                "LONGITUDE": -118.485219,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/12/1887",
+                "SCHOOL": "Cleveland, Tennessee",
+                "LATITUDE": 35.176232,
+                "LONGITUDE": -84.865884,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/27/1890",
+                "SCHOOL": "Kable's Military Academy, Staunton, Virginia",
+                "LATITUDE": 38.192236,
+                "LONGITUDE": -79.0662,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "03/26/1893",
+                "SCHOOL": "Plain Dealing High School, Plain Dealing, Louisiana",
+                "LATITUDE": 32.910009,
+                "LONGITUDE": -93.698923,
+                "DEATHS": 4
+            },
+            {
+                "DATE": "12/13/1898",
+                "SCHOOL": "Charleston, West Virginia",
+                "LATITUDE": 38.348005,
+                "LONGITUDE": -81.646979,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "2/24/1903",
+                "SCHOOL": "Inman High School, Inman, South Carolina",
+                "LATITUDE": 35.052795,
+                "LONGITUDE": -82.098652,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/21/1903",
+                "SCHOOL": "Cave Run School, Jackson, Kentucky",
+                "LATITUDE": 37.658421,
+                "LONGITUDE": -83.470602,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "4/6/1904",
+                "SCHOOL": "Chicago, Illinois",
+                "LATITUDE": 41.889643,
+                "LONGITUDE": -87.688058,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/16/1904",
+                "SCHOOL": "Indian School, Riverside, California",
+                "LATITUDE": 33.923356,
+                "LONGITUDE": -117.437374,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "12/16/1904",
+                "SCHOOL": "Magee, Mississippi",
+                "LATITUDE": 31.875979,
+                "LONGITUDE": -89.7334,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/5/1905",
+                "SCHOOL": "Hickman, Kentucky",
+                "LATITUDE": 36.568234,
+                "LONGITUDE": -89.183248,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/20/1907",
+                "SCHOOL": "Dayton School District, Chico, California",
+                "LATITUDE": 39.744364,
+                "LONGITUDE": -121.836802,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/11/1908",
+                "SCHOOL": "Laurens School, Boston, Massachusetts",
+                "LATITUDE": 42.404359,
+                "LONGITUDE": -71.126496,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "6/10/1909",
+                "SCHOOL": "Trinidad, Colorado",
+                "LATITUDE": 37.172997,
+                "LONGITUDE": -104.501665,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/11/1909",
+                "SCHOOL": "Bear Hollow School, McDonald County, Missouri",
+                "LATITUDE": 36.62453,
+                "LONGITUDE": -94.327741,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/12/1910",
+                "SCHOOL": "Harlem School, New York City, New York",
+                "LATITUDE": 40.808766,
+                "LONGITUDE": -73.93976,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/16/1910",
+                "SCHOOL": "Lexington Kentucky",
+                "LATITUDE": 38.049628,
+                "LONGITUDE": -84.461994,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/27/1911",
+                "SCHOOL": "Manhattan, Kansas",
+                "LATITUDE": 39.196148,
+                "LONGITUDE": -96.601368,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/31/1912",
+                "SCHOOL": "Oriental School, San Francisco, California",
+                "LATITUDE": 37.778748,
+                "LONGITUDE": -122.423975,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/16/1912",
+                "SCHOOL": "Lagrange, New York",
+                "LATITUDE": 41.652688,
+                "LONGITUDE": -73.762081,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/19/1914",
+                "SCHOOL": "Sayre, Pennsylvania",
+                "LATITUDE": 41.985867,
+                "LONGITUDE": -76.525021,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/3/1915",
+                "SCHOOL": "Clear Pond School, Jasper, Florida",
+                "LATITUDE": 30.521783,
+                "LONGITUDE": -82.951699,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/26/1916",
+                "SCHOOL": "Harris Creek School, Danville, Kentucky",
+                "LATITUDE": 38.05403,
+                "LONGITUDE": -84.764267,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/28/1917",
+                "SCHOOL": "May Public School, Chicago, Illinois",
+                "LATITUDE": 41.877219,
+                "LONGITUDE": -87.750561,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/29/1918",
+                "SCHOOL": "Lincoln Institute, State Negro Normal School, Jefferson City, Missouri",
+                "LATITUDE": 38.564034,
+                "LONGITUDE": -92.169607,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/6/1918",
+                "SCHOOL": "Reeder, North Dakota",
+                "LATITUDE": 46.10795,
+                "LONGITUDE": -102.944901,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/15/1920",
+                "SCHOOL": "Bowling Green, Ohio",
+                "LATITUDE": 41.375692,
+                "LONGITUDE": -83.651001,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/4/1920",
+                "SCHOOL": "Middlesboro High School, Middlesboro, Kentucky",
+                "LATITUDE": 36.609167,
+                "LONGITUDE": -83.749068,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/17/1922",
+                "SCHOOL": "Valdosta, Georgia",
+                "LATITUDE": 30.855664,
+                "LONGITUDE": -83.288375,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "8/1/1922",
+                "SCHOOL": "Mount Zion School, Ardmore, Oklahoma",
+                "LATITUDE": 34.169931,
+                "LONGITUDE": -97.122428,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/22/1930",
+                "SCHOOL": "Rural Schoolhouse, Ringe, Minnesota",
+                "LATITUDE": 44.108358,
+                "LONGITUDE": -92.388737,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/28/1931",
+                "SCHOOL": "Howard Gensen, Duluth, Minnesota",
+                "LATITUDE": 46.851972,
+                "LONGITUDE": -92.111197,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/14/1934",
+                "SCHOOL": "Northfield Mount Hermon School, Gill, Massachusetts",
+                "LATITUDE": 42.670637,
+                "LONGITUDE": -72.48379,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/4/1936",
+                "SCHOOL": "Lehigh University, Bethlehem, Pennsylvania",
+                "LATITUDE": 40.605007,
+                "LONGITUDE": -75.377508,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "6/4/1937",
+                "SCHOOL": "Isabel, Kansas",
+                "LATITUDE": 37.467285,
+                "LONGITUDE": -98.551113,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/24/1938",
+                "SCHOOL": "Blencoe High School, Blencoe, Iowa",
+                "LATITUDE": 41.937266,
+                "LONGITUDE": -96.08144,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/6/1940",
+                "SCHOOL": "South Pasadena Junior High School, South Pasadena, CA",
+                "LATITUDE": 34.108769,
+                "LONGITUDE": -118.149909,
+                "DEATHS": 5
+            },
+            {
+                "DATE": "7/4/1940",
+                "SCHOOL": "Boarding School, Valhalla, NY",
+                "LATITUDE": 41.117268,
+                "LONGITUDE": -73.780336,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/2/1942",
+                "SCHOOL": "William J. Gaynor Junior High School, New York City, NY",
+                "LATITUDE": 40.710076,
+                "LONGITUDE": -73.94385,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/23/1948",
+                "SCHOOL": "Ramapo, NY",
+                "LATITUDE": 41.143402,
+                "LONGITUDE": -74.168221,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/12/1949",
+                "SCHOOL": "Ohio State University, Columbus, OH",
+                "LATITUDE": 40.006853,
+                "LONGITUDE": -83.030412,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/18/1949",
+                "SCHOOL": "DuSable High School, Chicago, Illinois",
+                "LATITUDE": 41.805016,
+                "LONGITUDE": -87.624647,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/24/1951",
+                "SCHOOL": "Western Military Academy, Alton, Illinois",
+                "LATITUDE": 38.901443,
+                "LONGITUDE": -90.168915,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/12/1951",
+                "SCHOOL": "Alexander School, Union Mills, North Carolina",
+                "LATITUDE": 35.483225,
+                "LONGITUDE": -81.945512,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "11/27/1951",
+                "SCHOOL": "St. Louis, Missouri",
+                "LATITUDE": 38.653017,
+                "LONGITUDE": -90.234546,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/8/1952",
+                "SCHOOL": "Boarding School, Rabun Gap, Georgia",
+                "LATITUDE": 34.960745,
+                "LONGITUDE": -83.392358,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/14/1952",
+                "SCHOOL": "Columbia University, New York City, NY",
+                "LATITUDE": 40.807771,
+                "LONGITUDE": -73.962583,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/2/1953",
+                "SCHOOL": "Kelly High School, Chicago, Illinois",
+                "LATITUDE": 41.818448,
+                "LONGITUDE": -87.694752,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/31/1954",
+                "SCHOOL": "Day Junior Hight School, Newton, Massachusetts",
+                "LATITUDE": 42.357981,
+                "LONGITUDE": -71.21251,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/15/1954",
+                "SCHOOL": "University of North Carolina, Chapel Hill, North Carolina",
+                "LATITUDE": 35.90506,
+                "LONGITUDE": -79.046935,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/11/1955",
+                "SCHOOL": "Swarthmore College, Swarthmore, Pennsylvania",
+                "LATITUDE": 39.90399,
+                "LONGITUDE": -75.352648,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/4/1956",
+                "SCHOOL": "Maryland Park Junior High School, Seat Pleasant, Maryland",
+                "LATITUDE": 38.890827,
+                "LONGITUDE": -76.909565,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/1/1958",
+                "SCHOOL": "Massapequa High School, Massapequa, NY",
+                "LATITUDE": 40.668149,
+                "LONGITUDE": -73.453284,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/24/1959",
+                "SCHOOL": "Morris High School, NewYork City, NY",
+                "LATITUDE": 40.827466,
+                "LONGITUDE": -73.904488,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/2/1960",
+                "SCHOOL": "William Reed Elementary School, Hartford City, Indiana",
+                "LATITUDE": 40.487529,
+                "LONGITUDE": -85.373573,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "3/30/1960",
+                "SCHOOL": "Dubose Junior High School, Alice, Texas",
+                "LATITUDE": 27.760602,
+                "LONGITUDE": -98.068274,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/7/1960",
+                "SCHOOL": "Blaine Elementary School, Blaine, Minnesota",
+                "LATITUDE": 46.174586,
+                "LONGITUDE": -92.992432,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/4/1961",
+                "SCHOOL": "Delmont High School, Delmont, South Dakota",
+                "LATITUDE": 43.268911,
+                "LONGITUDE": -98.160816,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/17/1961",
+                "SCHOOL": "Morey Junior High School, Denver, Colorado",
+                "LATITUDE": 39.738386,
+                "LONGITUDE": -104.977146,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/27/1966",
+                "SCHOOL": "Bay Shore, NY",
+                "LATITUDE": 40.733366,
+                "LONGITUDE": -73.251315,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/1/1966",
+                "SCHOOL": "University of Texas, Austin, Texas",
+                "LATITUDE": 30.285169,
+                "LONGITUDE": -97.734035,
+                "DEATHS": 18
+            },
+            {
+                "DATE": "10/5/1966",
+                "SCHOOL": "Grand Rapids High School, Grand Rapids, Minnesota",
+                "LATITUDE": 47.247368,
+                "LONGITUDE": -93.542414,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/12/1966",
+                "SCHOOL": "Rose-Mar College of Beauty, Mesa, Arizona",
+                "LATITUDE": 33.403123,
+                "LONGITUDE": -111.872181,
+                "DEATHS": 5
+            },
+            {
+                "DATE": "5/3/1967",
+                "SCHOOL": "West Leyden High School, Northlake, Illinois",
+                "LATITUDE": 41.926871,
+                "LONGITUDE": -87.905415,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/30/1968",
+                "SCHOOL": "Miami Jackson High School, Miami, Florida",
+                "LATITUDE": 25.810946,
+                "LONGITUDE": -80.224789,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/25/1968",
+                "SCHOOL": "Central High School, High Point, North Carolina",
+                "LATITUDE": 35.957219,
+                "LONGITUDE": -80.021244,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/17/1969",
+                "SCHOOL": "Cardozo Senior High School, Washington DC.",
+                "LATITUDE": 38.922364,
+                "LONGITUDE": -77.028471,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/17/1969",
+                "SCHOOL": "University of California, Los Angeles, LA, California",
+                "LATITUDE": 34.069125,
+                "LONGITUDE": -118.44516,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "5/13/1969",
+                "SCHOOL": "Hanes Junior High School, Winston-Salem, North Carolina",
+                "LATITUDE": 36.133963,
+                "LONGITUDE": -80.22118,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/19/1969",
+                "SCHOOL": "Tomah Junior High School, Tomah, Wisconsin",
+                "LATITUDE": 43.981049,
+                "LONGITUDE": -90.50849,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/5/1970",
+                "SCHOOL": "Hine Junior High School, Washington D.C.",
+                "LATITUDE": 38.893051,
+                "LONGITUDE": -76.979398,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/11/1970",
+                "SCHOOL": "University of Pennsylvania, Philadelphia, Pennsylvania",
+                "LATITUDE": 39.952482,
+                "LONGITUDE": -75.193192,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "4/15/1970",
+                "SCHOOL": "Coleman High School, Pine Bluff, Arkansas",
+                "LATITUDE": 34.216392,
+                "LONGITUDE": -92.053009,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/23/1970",
+                "SCHOOL": "PS duPont High School, Wilmington, Delaware",
+                "LATITUDE": 39.764395,
+                "LONGITUDE": -75.533173,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/2/1971",
+                "SCHOOL": "Morris E.Leeds School, Philadephia, Pennsylvania",
+                "LATITUDE": 40.076657,
+                "LONGITUDE": -75.174913,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/11/1971",
+                "SCHOOL": "Gonzaga University, Spokane Washington",
+                "LATITUDE": 47.667221,
+                "LONGITUDE": -117.401336,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/14/1972",
+                "SCHOOL": "Chicago, Illinois",
+                "LATITUDE": 41.83953,
+                "LONGITUDE": -87.664712,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/4/1972",
+                "SCHOOL": "Libby Booth Elementary School, Reno Nevada",
+                "LATITUDE": 39.521037,
+                "LONGITUDE": -119.794648,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/5/1972",
+                "SCHOOL": "Decatur Central High School, Indianapolis, Indiana",
+                "LATITUDE": 39.687988,
+                "LONGITUDE": -86.276849,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/16/1972",
+                "SCHOOL": "Southern Univesity, Baton Rouge, Louisiana",
+                "LATITUDE": 30.526353,
+                "LONGITUDE": -91.178382,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/26/1973",
+                "SCHOOL": "Amstrong High School, Richmond, Virginia",
+                "LATITUDE": 37.55231,
+                "LONGITUDE": -77.404075,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/6/1973",
+                "SCHOOL": "School Board Meeting, Oakland, California",
+                "LATITUDE": 37.81667,
+                "LONGITUDE": -122.27401,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "01/171974",
+                "SCHOOL": "Chicago, Illinois",
+                "LATITUDE": 41.812923,
+                "LONGITUDE": -87.688058,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/22/1974",
+                "SCHOOL": "Brownstown Central High School, Brownstown Indiana",
+                "LATITUDE": 38.886179,
+                "LONGITUDE": -86.045766,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/30/1974",
+                "SCHOOL": "Olean High School, Olean, NY",
+                "LATITUDE": 42.082793,
+                "LONGITUDE": -78.434608,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "2/18/1975",
+                "SCHOOL": "Poughkeepsie, NY",
+                "LATITUDE": 41.703793,
+                "LONGITUDE": -73.916612,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/24/1975",
+                "SCHOOL": "St. James School, Penns Grove, New Jersey",
+                "LATITUDE": 39.730823,
+                "LONGITUDE": -75.470293,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/18/1975",
+                "SCHOOL": "St. Louis, Missouri",
+                "LATITUDE": 38.659451,
+                "LONGITUDE": -90.240726,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/11/1975",
+                "SCHOOL": "Grant High School, Oklahoma City, Oklahoma",
+                "LATITUDE": 35.415048,
+                "LONGITUDE": -97.54516,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/19/1976",
+                "SCHOOL": "Los Angeles Computer School, Los Angeles, CA",
+                "LATITUDE": 33.989419,
+                "LONGITUDE": -118.304007,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/12/1976",
+                "SCHOOL": "California State University, Fullerton, CA",
+                "LATITUDE": 33.882642,
+                "LONGITUDE": -117.885143,
+                "DEATHS": 7
+            },
+            {
+                "DATE": "4/7/1977",
+                "SCHOOL": "Whitharral, Texas",
+                "LATITUDE": 33.738093,
+                "LONGITUDE": -102.326675,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/9/1978",
+                "SCHOOL": "Hayes Junior High School, St. Albans, West Virginia",
+                "LATITUDE": 38.373755,
+                "LONGITUDE": -81.84186,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/22/1978",
+                "SCHOOL": "Everett High School, Lansing Michigan",
+                "LATITUDE": 42.693379,
+                "LONGITUDE": -84.556876,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/26/1978",
+                "SCHOOL": "Paul Dunbar Elementary School, Dallas Texas",
+                "LATITUDE": 32.775278,
+                "LONGITUDE": -96.749251,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/18/1978",
+                "SCHOOL": "Murchison Junior High School, Austin, Texas",
+                "LATITUDE": 30.354088,
+                "LONGITUDE": -97.759,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/29/1979",
+                "SCHOOL": "Cleveland Elementary School, San Diego, CA",
+                "LATITUDE": 32.883075,
+                "LONGITUDE": -117.148849,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/7/1980",
+                "SCHOOL": "Lafayette Country High School, Stamps, Arkansas",
+                "LATITUDE": 33.370149,
+                "LONGITUDE": -93.481128,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/20/1980",
+                "SCHOOL": "J. Leslie Patton School, Dallas Texas",
+                "LATITUDE": 32.704344,
+                "LONGITUDE": -96.824325,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/26/1980",
+                "SCHOOL": "Ferris State College, Big Rapids, Michigan",
+                "LATITUDE": 43.684156,
+                "LONGITUDE": -85.485232,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/31/1980",
+                "SCHOOL": "Hueytown High School, Hueytown, Alabama",
+                "LATITUDE": 33.430573,
+                "LONGITUDE": -87.033081,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/27/1981",
+                "SCHOOL": "University of Arkansas, Fayetteville, Arkansas",
+                "LATITUDE": 36.068915,
+                "LONGITUDE": -94.174783,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/17/1981",
+                "SCHOOL": "University of Michigan, Ann Arbor, Michigan",
+                "LATITUDE": 42.278218,
+                "LONGITUDE": -83.738213,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "12/16/1981",
+                "SCHOOL": "University of Portland, Portland, OR",
+                "LATITUDE": 45.573452,
+                "LONGITUDE": -122.727539,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/19/1982",
+                "SCHOOL": "Valley High School, Las Vegas, Nevada",
+                "LATITUDE": 36.143754,
+                "LONGITUDE": -115.119076,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/5/1982",
+                "SCHOOL": "Garland Community College, Hot Springs, Arkansas",
+                "LATITUDE": 34.512466,
+                "LONGITUDE": -93.11884,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "4/7/1981",
+                "SCHOOL": "Deer Creek Junior High School, Littleton, Colorado",
+                "LATITUDE": 39.586523,
+                "LONGITUDE": -105.10237,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/12/1982",
+                "SCHOOL": "Wingfield High School, Jackson Mississppi",
+                "LATITUDE": 32.280617,
+                "LONGITUDE": -90.241754,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/20/1982",
+                "SCHOOL": "Parkway South Middle School, St. Louis County, Missouri",
+                "LATITUDE": 38.610743,
+                "LONGITUDE": -90.507831,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "5/16/1982",
+                "SCHOOL": "Lake Highlands High School, Dallas Texas",
+                "LATITUDE": 32.887832,
+                "LONGITUDE": -96.727031,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/16/1983",
+                "SCHOOL": "Brentwood East Junior High School, Brentwood, NY",
+                "LATITUDE": 40.783236,
+                "LONGITUDE": -73.23556,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/8/1983",
+                "SCHOOL": "Highland Park High School, Highland Park, Michigan",
+                "LATITUDE": 43.79005,
+                "LONGITUDE": -83.199937,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/18/1983",
+                "SCHOOL": "Harlem Park Junior High School, Baltimore Maryland",
+                "LATITUDE": 39.304338,
+                "LONGITUDE": -76.642718,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/24/1984",
+                "SCHOOL": "49th Street Elementary School, LA, CA",
+                "LATITUDE": 33.998721,
+                "LONGITUDE": -118.261785,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "4/20/1984",
+                "SCHOOL": "Precious Blood School, Detroit Michigan",
+                "LATITUDE": 42.417858,
+                "LONGITUDE": -83.177722,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/17/1984",
+                "SCHOOL": "Southeast Polk High School, Pleasant Hill, Iowa",
+                "LATITUDE": 41.598685,
+                "LONGITUDE": -93.446034,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/21/1985",
+                "SCHOOL": "Goddard Junior High School, Goddard Kansas",
+                "LATITUDE": 37.655167,
+                "LONGITUDE": -97.576168,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/26/1985",
+                "SCHOOL": "Spanaway Junior High School, Spanaway WA",
+                "LATITUDE": 47.115803,
+                "LONGITUDE": -122.428618,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "12/3/1985",
+                "SCHOOL": "Concord High School, Concord New Hampshire",
+                "LATITUDE": 43.200648,
+                "LONGITUDE": -71.551175,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/10/1985",
+                "SCHOOL": "Portland Junior High School, Portland Connecticut",
+                "LATITUDE": 41.580612,
+                "LONGITUDE": -72.622533,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/29/1986",
+                "SCHOOL": "Senath-Hornersville High School, Senath Missouri",
+                "LATITUDE": 36.127544,
+                "LONGITUDE": -90.162489,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/16/1986",
+                "SCHOOL": "Cokeville Elementary School, Cokeville Wyoming",
+                "LATITUDE": 42.087087,
+                "LONGITUDE": -110.95435,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "12/4/1986",
+                "SCHOOL": "Fergus High School, Lewistown Montana",
+                "LATITUDE": 47.053773,
+                "LONGITUDE": -109.423817,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/4/1987",
+                "SCHOOL": "California State University, Northridge",
+                "LATITUDE": 34.241232,
+                "LONGITUDE": -118.527653,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/13/1987",
+                "SCHOOL": "Orme School, Mayer, Arizona",
+                "LATITUDE": 34.433232,
+                "LONGITUDE": -112.063552,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/2/1987",
+                "SCHOOL": "De Kalb, Missouri",
+                "LATITUDE": 39.586466,
+                "LONGITUDE": -94.928587,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/9/1987",
+                "SCHOOL": "Compton Unified School District, Compton CA",
+                "LATITUDE": 33.900227,
+                "LONGITUDE": -118.240863,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/16/1987",
+                "SCHOOL": "Murray-Wright High School, Detroit Michigan",
+                "LATITUDE": 42.349638,
+                "LONGITUDE": -83.083752,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/14/1987",
+                "SCHOOL": "DuSable High School, Chicago Illinois",
+                "LATITUDE": 41.805048,
+                "LONGITUDE": -87.624615,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/11/1988",
+                "SCHOOL": "Pinellas Park High, Largo Florida",
+                "LATITUDE": 27.880988,
+                "LONGITUDE": -82.723887,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/20/1988",
+                "SCHOOL": "Hubbard Woods School, Winnetka, Illinois",
+                "LATITUDE": 42.114702,
+                "LONGITUDE": -87.745687,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "8/31/1988",
+                "SCHOOL": "West Franklin Street Elementary, Anderson, South Carolina",
+                "LATITUDE": 34.505675,
+                "LONGITUDE": -82.665565,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/22/1988",
+                "SCHOOL": "Moses Montefiore Academy, Chicago Illinois",
+                "LATITUDE": 41.865092,
+                "LONGITUDE": -87.666577,
+                "DEATHS": 5
+            },
+            {
+                "DATE": "9/26/1988",
+                "SCHOOL": "Oakland Elementary School, Greenwood , South Carolina",
+                "LATITUDE": 34.228848,
+                "LONGITUDE": -82.141429,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "10/9/1988",
+                "SCHOOL": "Sacramento High School, Sacramento, CA",
+                "LATITUDE": 38.556201,
+                "LONGITUDE": -121.466631,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/16/1988",
+                "SCHOOL": "Atlantic Shores Christian School, Virginia Beach, Virginia",
+                "LATITUDE": 36.760624,
+                "LONGITUDE": -76.184673,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/17/1989",
+                "SCHOOL": "Cleveland Elementary School, Stockton, CA",
+                "LATITUDE": 37.982885,
+                "LONGITUDE": -121.30136,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "9/19/1989",
+                "SCHOOL": "Farrington High School, Honolulu, HI",
+                "LATITUDE": 21.330819,
+                "LONGITUDE": -157.873359,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/5/1989",
+                "SCHOOL": "Serra Catholic High School, McKeesport Pennsylvania",
+                "LATITUDE": 40.325909,
+                "LONGITUDE": -79.824171,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/15/1990",
+                "SCHOOL": "Montana State Uninversity Bozeman, Montana",
+                "LATITUDE": 45.66808,
+                "LONGITUDE": -111.054815,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "8/26/1990",
+                "SCHOOL": "Eldorado High, Las Vegas, Nevada",
+                "LATITUDE": 36.180314,
+                "LONGITUDE": -115.049579,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/23/1991",
+                "SCHOOL": "Ralph J. Bunche Middle School, Compton CA",
+                "LATITUDE": 33.92076,
+                "LONGITUDE": -118.228006,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/18/1991",
+                "SCHOOL": "Crosby High, Crosby Texas",
+                "LATITUDE": 29.896104,
+                "LONGITUDE": -95.069001,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/1/1991",
+                "SCHOOL": "University of Iowa, Iowa City, Iowa",
+                "LATITUDE": 41.66282,
+                "LONGITUDE": -91.554945,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "11/25/1991",
+                "SCHOOL": "Thomas Jefferson High, Brooklyn NY",
+                "LATITUDE": 40.667207,
+                "LONGITUDE": -73.894757,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/26/1992",
+                "SCHOOL": "Thomas Jefferson High, Brooklyn NY",
+                "LATITUDE": 40.667207,
+                "LONGITUDE": -73.894757,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/9/1992",
+                "SCHOOL": "Carter MacRae Elementary, Lancaster Pennsylvania",
+                "LATITUDE": 40.034233,
+                "LONGITUDE": -76.306022,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/31/1992",
+                "SCHOOL": "O. Perry Walker Hight, New Orleans, Louisiana",
+                "LATITUDE": 29.943728,
+                "LONGITUDE": -90.02712,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/23/1992",
+                "SCHOOL": "Indiana University, Bloomington, Indiana",
+                "LATITUDE": 39.175698,
+                "LONGITUDE": -86.512606,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "5/1/1992",
+                "SCHOOL": "Lindhurst High, Olivehurst, CA",
+                "LATITUDE": 39.083826,
+                "LONGITUDE": -121.537725,
+                "DEATHS": 4
+            },
+            {
+                "DATE": "11/20/1992",
+                "SCHOOL": "Tilden High School, Chicago Illinois",
+                "LATITUDE": 41.807704,
+                "LONGITUDE": -87.642342,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/14/1992",
+                "SCHOOL": "Bard College at Simon's Rock, Great Barrington, Massachusetts",
+                "LATITUDE": 42.208103,
+                "LONGITUDE": -73.378249,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/18/1993",
+                "SCHOOL": "East Carter High, Grayson, Kentucky",
+                "LATITUDE": 38.324896,
+                "LONGITUDE": -82.933271,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/22/1993",
+                "SCHOOL": "Reseda High, LA, CA",
+                "LATITUDE": 34.192994,
+                "LONGITUDE": -118.529693,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/15/1993",
+                "SCHOOL": "Ford Middle School, Acushnet, Massachusetts",
+                "LATITUDE": 41.723454,
+                "LONGITUDE": -70.90517,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/14/1993",
+                "SCHOOL": "Nimitz High, Irving TX",
+                "LATITUDE": 32.792499,
+                "LONGITUDE": -96.946434,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/24/1993",
+                "SCHOOL": "Upper Perkiomen High, Pennsburg, Pennsylvania",
+                "LATITUDE": 40.382083,
+                "LONGITUDE": -75.48994,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/27/1993",
+                "SCHOOL": "Frederick A. Douglass High, New Orleans, Louisiana",
+                "LATITUDE": 29.966015,
+                "LONGITUDE": -90.036901,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/13/1993",
+                "SCHOOL": "Weber State University, Ogden Utah",
+                "LATITUDE": 41.191864,
+                "LONGITUDE": -111.944095,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/17/1993",
+                "SCHOOL": "Hinsdale South High, Darien Illinois",
+                "LATITUDE": 41.753906,
+                "LONGITUDE": -87.952716,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/17/1993",
+                "SCHOOL": "Central Junior High, Sheridan, Wyoming",
+                "LATITUDE": 44.803312,
+                "LONGITUDE": -106.964221,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/4/1993",
+                "SCHOOL": "New Britain High, New Britain, Connecticut",
+                "LATITUDE": 41.650184,
+                "LONGITUDE": -72.778015,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/1/1993",
+                "SCHOOL": "Wauwatosa West High, Wauwatosa Wisconsin",
+                "LATITUDE": 43.068533,
+                "LONGITUDE": -88.055398,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/17/1993",
+                "SCHOOL": "Chelsea High, Chelsea Michigan",
+                "LATITUDE": 42.311659,
+                "LONGITUDE": -84.002491,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/24/1994",
+                "SCHOOL": "Eau Claire High, Columbia, South Carolina",
+                "LATITUDE": 34.048395,
+                "LONGITUDE": -81.042626,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/31/1994",
+                "SCHOOL": "Whitman Middle School, Seattle, WA",
+                "LATITUDE": 47.696798,
+                "LONGITUDE": -122.377708,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/7/1994",
+                "SCHOOL": "Cypress Lake Middle School, Fort Myers, Florida",
+                "LATITUDE": 26.545114,
+                "LONGITUDE": -81.901879,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/8/1994",
+                "SCHOOL": "Osborn High, Detroit Michigan",
+                "LATITUDE": 42.434228,
+                "LONGITUDE": -83.002702,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/14/1994",
+                "SCHOOL": "Carlmont High, Belmont, CA",
+                "LATITUDE": 37.504828,
+                "LONGITUDE": -122.288159,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/1/1994",
+                "SCHOOL": "Kemper Military School and College, Boonville, Missouri",
+                "LATITUDE": 38.971732,
+                "LONGITUDE": -92.746282,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/15/1994",
+                "SCHOOL": "Goose Creek High, Charleston, S. Carolina",
+                "LATITUDE": 32.974196,
+                "LONGITUDE": -80.017523,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/23/1994",
+                "SCHOOL": "Ballard High, Seattle WA",
+                "LATITUDE": 47.676845,
+                "LONGITUDE": -122.375368,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/12/1994",
+                "SCHOOL": "Margaret Leary Elementary School, Butte, Montana",
+                "LATITUDE": 45.961175,
+                "LONGITUDE": -112.52152,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/19/1994",
+                "SCHOOL": "Eliot Junior High, Washington DC.",
+                "LATITUDE": 38.893077,
+                "LONGITUDE": -76.979387,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/21/1994",
+                "SCHOOL": "J.T. Moore Middle School, Nashville, Tennessee",
+                "LATITUDE": 36.095696,
+                "LONGITUDE": -86.802558,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/21/1994",
+                "SCHOOL": "North Miami High, North Miami, FL",
+                "LATITUDE": 25.899473,
+                "LONGITUDE": -80.184191,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/21/1994",
+                "SCHOOL": "Ardmore Childcare Center, Ardmore , Pennsylvania",
+                "LATITUDE": 40.010037,
+                "LONGITUDE": -75.295438,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/24/1994",
+                "SCHOOL": "Manchester Elementary School,Manchester, Pennsylvania",
+                "LATITUDE": 40.456824,
+                "LONGITUDE": -80.026973,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "7/25/1994",
+                "SCHOOL": "Ottumwa High, Ottumwa, Iowa",
+                "LATITUDE": 41.04906,
+                "LONGITUDE": -92.401472,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/12/1994",
+                "SCHOOL": "Grimsley High, Greensboro, N. Carolina",
+                "LATITUDE": 36.082809,
+                "LONGITUDE": -79.814495,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/7/1994",
+                "SCHOOL": "Wickliffe Middle School, Wickliffe, Ohio",
+                "LATITUDE": 41.605423,
+                "LONGITUDE": -81.47393,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/6/1995",
+                "SCHOOL": "Cardozo High, Washington DC",
+                "LATITUDE": 38.922422,
+                "LONGITUDE": -77.028385,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/29/1995",
+                "SCHOOL": "Memorial Middle School, Laredo, Texas",
+                "LATITUDE": 27.513412,
+                "LONGITUDE": -99.494979,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/12/1995",
+                "SCHOOL": "Cypress Junior High, Memphis Tennessee",
+                "LATITUDE": 35.16736,
+                "LONGITUDE": -89.988011,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/14/1995",
+                "SCHOOL": "Olathe North High, Olathe, Kansas",
+                "LATITUDE": 38.887708,
+                "LONGITUDE": -94.808246,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "9/29/1995",
+                "SCHOOL": "Tavares Middle School, Tavares Florida",
+                "LATITUDE": 28.770668,
+                "LONGITUDE": -81.741086,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/12/1995",
+                "SCHOOL": "Blackville-Hilda High, Blackville, S. Carolina",
+                "LATITUDE": 33.364584,
+                "LONGITUDE": -81.263593,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "10/15/1995",
+                "SCHOOL": "Richland High, Lynnville Tennessee",
+                "LATITUDE": 35.33749,
+                "LONGITUDE": -87.031904,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/19/1996",
+                "SCHOOL": "Winston Education Center, Washington DC",
+                "LATITUDE": 38.857757,
+                "LONGITUDE": -76.963001,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/2/1996",
+                "SCHOOL": "Frontier Middle School, Moses Lake, WA",
+                "LATITUDE": 47.126748,
+                "LONGITUDE": -119.283137,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "2/29/1996",
+                "SCHOOL": "Beaumont High, St. Louis, Missouri",
+                "LATITUDE": 38.66316,
+                "LONGITUDE": -90.221638,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "8/15/1996",
+                "SCHOOL": "San Diego State University, San Diego, CA",
+                "LATITUDE": 32.777769,
+                "LONGITUDE": -117.071451,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "9/17/1996",
+                "SCHOOL": "Penn State University, State College, Pennsylvania",
+                "LATITUDE": 40.798441,
+                "LONGITUDE": -77.859876,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/25/1996",
+                "SCHOOL": "Dekalb Alternative School, Decatur, Georgia",
+                "LATITUDE": 33.798918,
+                "LONGITUDE": -84.198146,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/2/1996",
+                "SCHOOL": "Smedley Elementary School, Philadelphia, Pennsylvania",
+                "LATITUDE": 40.019893,
+                "LONGITUDE": -75.074031,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "10/4/1996",
+                "SCHOOL": "St. Bernard High School, Playa del Rey, California",
+                "LATITUDE": 33.954441,
+                "LONGITUDE": -118.432802,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/9/1996",
+                "SCHOOL": "Jacksonville Middle School, Sherwood, Arkansas",
+                "LATITUDE": 34.887617,
+                "LONGITUDE": -92.158688,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/11/1996",
+                "SCHOOL": "Sumner High School, St. Louis, Missouri",
+                "LATITUDE": 38.659853,
+                "LONGITUDE": -90.238966,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/16/1996",
+                "SCHOOL": "Purdue University, West Lafayette, Indiana",
+                "LATITUDE": 40.423893,
+                "LONGITUDE": -86.921205,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "11/27/1996",
+                "SCHOOL": "Highlands High School, Sacramento, California",
+                "LATITUDE": 38.687453,
+                "LONGITUDE": -121.359199,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/11/1997",
+                "SCHOOL": "Crown Heights High School, New York City, New York",
+                "LATITUDE": 40.671351,
+                "LONGITUDE": -73.9613,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/27/1997",
+                "SCHOOL": "Conniston Middle School, West Palm Beach, Florida",
+                "LATITUDE": 26.678493,
+                "LONGITUDE": -80.061722,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/19/1997",
+                "SCHOOL": "Bethel Regional High, Bethel Alaska",
+                "LATITUDE": 60.802772,
+                "LONGITUDE": -161.77065,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/17/1997",
+                "SCHOOL": "Pershing High School, Detroit, Michigan",
+                "LATITUDE": 42.432207,
+                "LONGITUDE": -83.063797,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/1/1997",
+                "SCHOOL": "Pearl High, Pearl Mississippi",
+                "LATITUDE": 32.270652,
+                "LONGITUDE": -90.093377,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "12/1/1997",
+                "SCHOOL": "Heath Middle, West Paducah, Kentucky",
+                "LATITUDE": 37.079273,
+                "LONGITUDE": -88.794406,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "3/24/1998",
+                "SCHOOL": "Westside Middle School, Craighead County, Arkansas",
+                "LATITUDE": 35.857432,
+                "LONGITUDE": -90.805831,
+                "DEATHS": 5
+            },
+            {
+                "DATE": "4/24/1998",
+                "SCHOOL": "Parker Middle School, Edinboro, Pennsylvania",
+                "LATITUDE": 41.91541,
+                "LONGITUDE": -80.121013,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/19/1998",
+                "SCHOOL": "Lincoln County High, Fayetteville, Tennessee",
+                "LATITUDE": 35.135399,
+                "LONGITUDE": -86.5684,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/21/1998",
+                "SCHOOL": "Thurston High, Springfield, OR",
+                "LATITUDE": 44.048884,
+                "LONGITUDE": -122.925117,
+                "DEATHS": 4
+            },
+            {
+                "DATE": "12/10/1998",
+                "SCHOOL": "Wayne State University, Detroit Michigan",
+                "LATITUDE": 42.359329,
+                "LONGITUDE": -83.066546,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/8/1999",
+                "SCHOOL": "Central Carroll High, Carrollton, Georgia",
+                "LATITUDE": 33.552349,
+                "LONGITUDE": -85.068287,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "4/20/1999",
+                "SCHOOL": "Columbine High, Littleton Colorado",
+                "LATITUDE": 39.604236,
+                "LONGITUDE": -105.073242,
+                "DEATHS": 15
+            },
+            {
+                "DATE": "11/19/1999",
+                "SCHOOL": "Deming Middle School, New Mexico",
+                "LATITUDE": 32.246033,
+                "LONGITUDE": -107.781924,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/29/2000",
+                "SCHOOL": "Buell Elementary, Mt. Morris Township, Michigan",
+                "LATITUDE": 43.12787,
+                "LONGITUDE": -83.700704,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/26/2000",
+                "SCHOOL": "Lake Worth Middle School, Lake Worth, Florida",
+                "LATITUDE": 26.63377,
+                "LONGITUDE": -80.070761,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/28/2000",
+                "SCHOOL": "UW Medical Center, Seattle WA",
+                "LATITUDE": 47.649165,
+                "LONGITUDE": -122.306154,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "8/28/2000",
+                "SCHOOL": "U of Arkansas, Fayetteville, Arkansas",
+                "LATITUDE": 36.068941,
+                "LONGITUDE": -94.174879,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/5/2001",
+                "SCHOOL": "Santana High, Santee, CA",
+                "LATITUDE": 32.857502,
+                "LONGITUDE": -116.969196,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "5/16/2001",
+                "SCHOOL": "Pacific Lutheran U, Parkland, WA",
+                "LATITUDE": 47.145332,
+                "LONGITUDE": -122.443635,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/30/2001",
+                "SCHOOL": "Lew Wallace High, Gary, Indiana",
+                "LATITUDE": 41.536327,
+                "LONGITUDE": -87.342275,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/16/2002",
+                "SCHOOL": "Appalachian School of Law, Grundy, Virginia",
+                "LATITUDE": 37.278264,
+                "LONGITUDE": -82.096491,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "2/20/2002",
+                "SCHOOL": "Washington High, Milwaukee, Wisconsin",
+                "LATITUDE": 43.06947,
+                "LONGITUDE": -87.968376,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/28/2002",
+                "SCHOOL": "University of Arizona, Tucson, Arizona",
+                "LATITUDE": 32.232058,
+                "LONGITUDE": -110.950142,
+                "DEATHS": 4
+            },
+            {
+                "DATE": "4/14/2003",
+                "SCHOOL": "John McDonogh High, New Orleans, Louisiana",
+                "LATITUDE": 29.97467,
+                "LONGITUDE": -90.076431,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/24/2003",
+                "SCHOOL": "Red Lion Area Junior High, Red Lion, Pennsylvania",
+                "LATITUDE": 39.892693,
+                "LONGITUDE": -76.608334,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "5/9/2003",
+                "SCHOOL": "Case Western Reserve University, Cleveland, Ohio",
+                "LATITUDE": 41.50455,
+                "LONGITUDE": -81.60848,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/24/2003",
+                "SCHOOL": "Rocori High, Cold Spring, Minnesota",
+                "LATITUDE": 45.464456,
+                "LONGITUDE": -94.428183,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/2/2004",
+                "SCHOOL": "Ballou High, Washington DC.",
+                "LATITUDE": 38.841014,
+                "LONGITUDE": -77.001258,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/2/2005",
+                "SCHOOL": "Stewart County High, Dover, Tennessee",
+                "LATITUDE": 36.531638,
+                "LONGITUDE": -87.814337,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/21/2005",
+                "SCHOOL": "Red Lake Senior High, Red Lake, Minnesota",
+                "LATITUDE": 47.878728,
+                "LONGITUDE": -95.01482,
+                "DEATHS": 10
+            },
+            {
+                "DATE": "7/18/2005",
+                "SCHOOL": "Weequahic High, Newark, New Jersey",
+                "LATITUDE": 40.709375,
+                "LONGITUDE": -74.220386,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/8/2005",
+                "SCHOOL": "Campbell County High, Jacksboro, Tennessee",
+                "LATITUDE": 36.35118,
+                "LONGITUDE": -84.147758,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/24/2006",
+                "SCHOOL": "Essex  Elementary School, Essex Junction, Vermont",
+                "LATITUDE": 44.513181,
+                "LONGITUDE": -73.055671,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "8/30/2006",
+                "SCHOOL": "Orange High, Hillsborough, North Carolina",
+                "LATITUDE": 36.092918,
+                "LONGITUDE": -79.094122,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/2/2006",
+                "SCHOOL": "Shepherd  University, Shepherdstown, W. Virginia",
+                "LATITUDE": 39.433966,
+                "LONGITUDE": -77.804541,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "9/27/2006",
+                "SCHOOL": "Platte Canyon High, Bailey, Colorado",
+                "LATITUDE": 39.421397,
+                "LONGITUDE": -105.535046,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "9/29/2006",
+                "SCHOOL": "Weston High, Cazenovia, Wisconsin",
+                "LATITUDE": 43.480387,
+                "LONGITUDE": -90.190957,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/2/2006",
+                "SCHOOL": "West Nickel Mines School, Nickel Mines, Pennsylvania",
+                "LATITUDE": 39.960482,
+                "LONGITUDE": -76.080449,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "1/3/2007",
+                "SCHOOL": "Henry Foss High, Tacoma, WA",
+                "LATITUDE": 47.239745,
+                "LONGITUDE": -122.496302,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/16/2007",
+                "SCHOOL": "Virginia Tech, Blacksburg, Virginia",
+                "LATITUDE": 37.228581,
+                "LONGITUDE": -80.423481,
+                "DEATHS": 33
+            },
+            {
+                "DATE": "9/21/2007",
+                "SCHOOL": "Delaware State University, Dover, Delaware",
+                "LATITUDE": 39.186362,
+                "LONGITUDE": -75.54237,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/10/2007",
+                "SCHOOL": "Success Tech Alternative High, Cleveland, OH",
+                "LATITUDE": 41.504001,
+                "LONGITUDE": -81.694833,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/8/2008",
+                "SCHOOL": "Louisiana Tech College, Baton Rouge, Louisiana",
+                "LATITUDE": 30.448275,
+                "LONGITUDE": -91.137693,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "2/12/2008",
+                "SCHOOL": "E.O. Green Junior High, Oxnard, CA",
+                "LATITUDE": 34.165536,
+                "LONGITUDE": -119.181504,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/14/2008",
+                "SCHOOL": "Northern Illinois University, DeKalb, Illinois",
+                "LATITUDE": 41.934409,
+                "LONGITUDE": -88.774069,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "8/14/2008",
+                "SCHOOL": "Lakota Middle School, Federal Way, WA",
+                "LATITUDE": 47.319565,
+                "LONGITUDE": -122.35456,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/21/2008",
+                "SCHOOL": "Central High, Knoxville, Tennessee",
+                "LATITUDE": 36.041224,
+                "LONGITUDE": -83.924806,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/16/2008",
+                "SCHOOL": "Henry Ford High, Detroit, Michigan",
+                "LATITUDE": 42.439819,
+                "LONGITUDE": -83.237689,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/26/2008",
+                "SCHOOL": "Universty of Central Arkansas, Conway, AR",
+                "LATITUDE": 35.078296,
+                "LONGITUDE": -92.457817,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "11/12/2008",
+                "SCHOOL": "Dillard High, Fort Lauderdale, FL",
+                "LATITUDE": 26.139891,
+                "LONGITUDE": -80.175889,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/18/2009",
+                "SCHOOL": "Harvard College, Cambridge Massachusetts",
+                "LATITUDE": 42.375106,
+                "LONGITUDE": -71.118263,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/18/2009",
+                "SCHOOL": "Larose-Cut Off Middle School, Larose, LA",
+                "LATITUDE": 29.563064,
+                "LONGITUDE": -90.364713,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/5/2010",
+                "SCHOOL": "Discovery Middle School, Madison, Alabama",
+                "LATITUDE": 34.741332,
+                "LONGITUDE": -86.742145,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/28/2010",
+                "SCHOOL": "University of Texas, Austin, TX",
+                "LATITUDE": 30.286068,
+                "LONGITUDE": -97.734,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/1/2010",
+                "SCHOOL": "Alisal High, Salinas, CA",
+                "LATITUDE": 36.684466,
+                "LONGITUDE": -121.600745,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/29/2010",
+                "SCHOOL": "Marinette High, Marinette, WI",
+                "LATITUDE": 45.082241,
+                "LONGITUDE": -87.63035,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/5/2011",
+                "SCHOOL": "Millard South High, Omaha, NE",
+                "LATITUDE": 41.204116,
+                "LONGITUDE": -96.146171,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/31/2011",
+                "SCHOOL": "Worthing High, Houston, TX",
+                "LATITUDE": 29.657406,
+                "LONGITUDE": -95.366496,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/8/2011",
+                "SCHOOL": "Radford University, Blacksburg, VA",
+                "LATITUDE": 37.139696,
+                "LONGITUDE": -80.551036,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/27/2012",
+                "SCHOOL": "Chardon High, Chardon OH",
+                "LATITUDE": 41.591241,
+                "LONGITUDE": -81.200735,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "4/2/2012",
+                "SCHOOL": "Oikos University, Oakland, CA",
+                "LATITUDE": 37.742428,
+                "LONGITUDE": -122.199845,
+                "DEATHS": 7
+            },
+            {
+                "DATE": "10/19/2012",
+                "SCHOOL": "Banner Academy South, Chicago, Illinois",
+                "LATITUDE": 41.896059,
+                "LONGITUDE": -87.75431,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/14/2012",
+                "SCHOOL": "Sandy Hook Elementary School, Newtown, CT",
+                "LATITUDE": 41.420323,
+                "LONGITUDE": -73.277507,
+                "DEATHS": 28
+            },
+            {
+                "DATE": "1/15/2013",
+                "SCHOOL": "Hazard Community and Tech College, Hazard, KY",
+                "LATITUDE": 37.233323,
+                "LONGITUDE": -83.175309,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "1/16/2013",
+                "SCHOOL": "Chicago State University, Chicago, IL",
+                "LATITUDE": 41.714789,
+                "LONGITUDE": -87.613278,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/18/2013",
+                "SCHOOL": "University of Central FL, Orlando, FL",
+                "LATITUDE": 28.613677,
+                "LONGITUDE": -81.20026,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/7/2013",
+                "SCHOOL": "Santa Monica College, Santa Monica, CA",
+                "LATITUDE": 34.01677,
+                "LONGITUDE": -118.470363,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "8/23/2013",
+                "SCHOOL": "North Panola High, Sardis, MS",
+                "LATITUDE": 34.443857,
+                "LONGITUDE": -89.92481,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/21/2013",
+                "SCHOOL": "Sparks Middle School, Sparks, NV",
+                "LATITUDE": 39.55213,
+                "LONGITUDE": -119.768053,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "12/13/2013",
+                "SCHOOL": "Arapahoe High, Centennial. CO",
+                "LATITUDE": 39.581799,
+                "LONGITUDE": -104.962819,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/21/2014",
+                "SCHOOL": "Purdue University, West Lafayette, IN",
+                "LATITUDE": 40.423983,
+                "LONGITUDE": -86.92113,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/24/2014",
+                "SCHOOL": "South Carolina State University, Orangeburg, S.C",
+                "LATITUDE": 33.498672,
+                "LONGITUDE": -80.849833,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/25/2014",
+                "SCHOOL": "Los Angeles Valley College,Van Nuys, CA",
+                "LATITUDE": 34.175407,
+                "LONGITUDE": -118.419082,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/11/2014",
+                "SCHOOL": "East English Village Preparatory Academy, Detroit, MI",
+                "LATITUDE": 42.408284,
+                "LONGITUDE": -82.929064,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/5/2014",
+                "SCHOOL": "Seattle Pacific University, Seattle, WA",
+                "LATITUDE": 47.649321,
+                "LONGITUDE": -122.361828,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/10/2014",
+                "SCHOOL": "Reynolds High, Troutdale, OR",
+                "LATITUDE": 45.528699,
+                "LONGITUDE": -122.405305,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "10/3/2014",
+                "SCHOOL": "Langston Hughes High, Fairburn GA",
+                "LATITUDE": 33.61672,
+                "LONGITUDE": -84.633595,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/24/2014",
+                "SCHOOL": "Marysville Pilchuck High, Marysville WA",
+                "LATITUDE": 48.096652,
+                "LONGITUDE": -122.154488,
+                "DEATHS": 5
+            },
+            {
+                "DATE": "11/20/2014",
+                "SCHOOL": "Florida State University, Tallahassee, FL",
+                "LATITUDE": 30.44948,
+                "LONGITUDE": -84.297526,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/20/2014",
+                "SCHOOL": "Miami Carol City High, Miami, FL",
+                "LATITUDE": 25.941159,
+                "LONGITUDE": -80.257137,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/14/2015",
+                "SCHOOL": "Tenaya Middle School, Merced, CA",
+                "LATITUDE": 37.292874,
+                "LONGITUDE": -120.492768,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/13/2015",
+                "SCHOOL": "Wayne Community College, Goldsboro, NC",
+                "LATITUDE": 35.403326,
+                "LONGITUDE": -77.945364,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/27/2015",
+                "SCHOOL": "Savannah State University, Savannah, GA",
+                "LATITUDE": 32.030059,
+                "LONGITUDE": -81.061039,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/3/2015",
+                "SCHOOL": "Sacramento City College, Sacramento, CA",
+                "LATITUDE": 38.541157,
+                "LONGITUDE": -121.488085,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/1/2015",
+                "SCHOOL": "Umpqua Community College, Roseburg, OR",
+                "LATITUDE": 43.289772,
+                "LONGITUDE": -123.333236,
+                "DEATHS": 10
+            },
+            {
+                "DATE": "10/9/2015",
+                "SCHOOL": "Northern Arizona University, Flagstaff, AZ",
+                "LATITUDE": 35.180703,
+                "LONGITUDE": -111.654043,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/9/2015",
+                "SCHOOL": "Texas Southern University, Houston TX",
+                "LATITUDE": 29.721645,
+                "LONGITUDE": -95.359269,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/22/2015",
+                "SCHOOL": "Tennessee State University, Nashville, TN",
+                "LATITUDE": 36.168578,
+                "LONGITUDE": -86.825792,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/1/2015",
+                "SCHOOL": "Winston-Salem State University, Winston-Salem NC",
+                "LATITUDE": 36.090018,
+                "LONGITUDE": -80.225065,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/20/2015",
+                "SCHOOL": "Mojave High, North Las Vegas, NV",
+                "LATITUDE": 36.255673,
+                "LONGITUDE": -115.13809,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/12/2016",
+                "SCHOOL": "Independence High, Glendale, AZ",
+                "LATITUDE": 33.532734,
+                "LONGITUDE": -112.222395,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "4/23/2016",
+                "SCHOOL": "Antigo High, Antigo, WI",
+                "LATITUDE": 45.134646,
+                "LONGITUDE": -89.175274,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "6/1/2016",
+                "SCHOOL": "UCLA, LA, CA",
+                "LATITUDE": 34.069125,
+                "LONGITUDE": -118.445203,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "6/8/2016",
+                "SCHOOL": "Jeremiah Burke High, Dorchester, MA",
+                "LATITUDE": 42.307324,
+                "LONGITUDE": -71.081173,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/9/2016",
+                "SCHOOL": "Alpine High, Alpine, TX",
+                "LATITUDE": 30.372804,
+                "LONGITUDE": -103.665884,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/28/2016",
+                "SCHOOL": "Townville Elementary, Townville, SC",
+                "LATITUDE": 34.563572,
+                "LONGITUDE": -82.903034,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "1/27/2017",
+                "SCHOOL": "Scullen Middle School, Naperville, IL",
+                "LATITUDE": 41.696485,
+                "LONGITUDE": -88.211498,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/10/2017",
+                "SCHOOL": "North Park Ele. San Bernardino, CA",
+                "LATITUDE": 34.179474,
+                "LONGITUDE": -117.301169,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "5/4/2017",
+                "SCHOOL": "North Lake College, Irving, TX",
+                "LATITUDE": 32.871415,
+                "LONGITUDE": -96.967271,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "9/13/2017",
+                "SCHOOL": "Freeman High, Rockford, WA",
+                "LATITUDE": 47.520174,
+                "LONGITUDE": -117.196191,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/14/2017",
+                "SCHOOL": "Rancho Tehama Ele. Rancho Tehama Reserve, CA",
+                "LATITUDE": 40.024004,
+                "LONGITUDE": -122.393574,
+                "DEATHS": 6
+            },
+            {
+                "DATE": "12/7/2017",
+                "SCHOOL": "Aztec High, Aztec NM",
+                "LATITUDE": 36.820959,
+                "LONGITUDE": -107.990584,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "1/20/2018",
+                "SCHOOL": "Wake Forest University, Winston-Salem NC",
+                "LATITUDE": 36.13573,
+                "LONGITUDE": -80.279164,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/23/2018",
+                "SCHOOL": "Marshall County High, Marshall County, KY",
+                "LATITUDE": 36.912975,
+                "LONGITUDE": -88.332853,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "2/14/2018",
+                "SCHOOL": "Marjory Stoneman Douglas High, Parkland, FL",
+                "LATITUDE": 26.304546,
+                "LONGITUDE": -80.267592,
+                "DEATHS": 17
+            },
+            {
+                "DATE": "2/24/2018",
+                "SCHOOL": "Savannah State University, Savannah, GA",
+                "LATITUDE": 32.030641,
+                "LONGITUDE": -81.061039,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/2/2018",
+                "SCHOOL": "Central Michigan University, Mount Pleasant, MI",
+                "LATITUDE": 43.584671,
+                "LONGITUDE": -84.776501,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "3/7/2018",
+                "SCHOOL": "Huffman High, Birmingham, AL",
+                "LATITUDE": 33.611516,
+                "LONGITUDE": -86.683213,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/20/2018",
+                "SCHOOL": "Great Mills High, Great Mills, MD",
+                "LATITUDE": 38.247671,
+                "LONGITUDE": -76.487514,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "5/18/2018",
+                "SCHOOL": "Santa Fe High, Santa Fe, TX",
+                "LATITUDE": 29.392956,
+                "LONGITUDE": -95.142026,
+                "DEATHS": 10
+            },
+            {
+                "DATE": "5/18/2018",
+                "SCHOOL": "Mount Zion High, Jonesboro, GA",
+                "LATITUDE": 33.554899,
+                "LONGITUDE": -84.310577,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/4/2018",
+                "SCHOOL": "Edgewood High, Edgewood, MD",
+                "LATITUDE": 39.422442,
+                "LONGITUDE": -76.286022,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/5/2018",
+                "SCHOOL": "Providence Career and Technical Academy, Providence, RI",
+                "LATITUDE": 41.816759,
+                "LONGITUDE": -71.421875,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/11/2018",
+                "SCHOOL": "Canyon Springs High, N. Las Vegas, NV",
+                "LATITUDE": 36.233523,
+                "LONGITUDE": -115.136036,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/29/2018",
+                "SCHOOL": "David W. Butler High, Matthews, NC",
+                "LATITUDE": 35.12058,
+                "LONGITUDE": -80.69008,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/13/2018",
+                "SCHOOL": "Dennis Intermediate School, Richmond, IN",
+                "LATITUDE": 39.83197,
+                "LONGITUDE": -84.91113,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/7/2019",
+                "SCHOOL": "Central Elementary School, Belmont, CA",
+                "LATITUDE": 37.524354,
+                "LONGITUDE": -122.282497,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/11/2019",
+                "SCHOOL": "Cascade Middle School, Eugene OR",
+                "LATITUDE": 44.078857,
+                "LONGITUDE": -123.166849,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/12/2019",
+                "SCHOOL": "Central Academy of Excellence, Kansas City, MO",
+                "LATITUDE": 39.06698,
+                "LONGITUDE": -94.541744,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/17/2019",
+                "SCHOOL": "Eaglecrest High, Arapahoe, CO",
+                "LATITUDE": 39.623961,
+                "LONGITUDE": -104.735058,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/30/2019",
+                "SCHOOL": "U of NC at Charlotte, Charlotte, NC",
+                "LATITUDE": 35.307347,
+                "LONGITUDE": -80.735153,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "5/4/2019",
+                "SCHOOL": "U of OR, Eugene, OR",
+                "LATITUDE": 44.047534,
+                "LONGITUDE": -123.072269,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "5/7/2019",
+                "SCHOOL": "STEM School Highlands Ranch, Highlands Ranch, CO",
+                "LATITUDE": 39.556064,
+                "LONGITUDE": -104.997397,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/6/2019",
+                "SCHOOL": "Jeannette High, Jeannette, PA",
+                "LATITUDE": 40.314775,
+                "LONGITUDE": -79.608643,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/13/2019",
+                "SCHOOL": "Tennessee State University, Nashville, TN",
+                "LATITUDE": 36.168613,
+                "LONGITUDE": -86.825771,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/13/2019",
+                "SCHOOL": "Esteban Torres High, LA, CA",
+                "LATITUDE": 34.042202,
+                "LONGITUDE": -118.17536,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/14/2019",
+                "SCHOOL": "Saugus High, Santa Clarita, CA",
+                "LATITUDE": 34.442448,
+                "LONGITUDE": -118.517557,
+                "DEATHS": 3
+            },
+            {
+                "DATE": "11/15/2019",
+                "SCHOOL": "Pleasantville High, Pleasantville, NJ",
+                "LATITUDE": 39.406377,
+                "LONGITUDE": -74.527571,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/23/2019",
+                "SCHOOL": "Searles Elementary School, Union City, CA",
+                "LATITUDE": 37.595807,
+                "LONGITUDE": -122.02712,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "11/26/2019",
+                "SCHOOL": "Sarah J. Anderson Ele. Salmon Creek, WA",
+                "LATITUDE": 45.695668,
+                "LONGITUDE": -122.648987,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "12/19/2019",
+                "SCHOOL": "Lely High, Naples, FL",
+                "LATITUDE": 26.088766,
+                "LONGITUDE": -81.7168,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/11/2020",
+                "SCHOOL": "South Oak Cliff High, Dallas TX",
+                "LATITUDE": 32.699862,
+                "LONGITUDE": -96.816765,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "1/14/2020",
+                "SCHOOL": "Bellaire High, Bellaire, TX",
+                "LATITUDE": 29.691729,
+                "LONGITUDE": -95.467996,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/3/2020",
+                "SCHOOL": "Texas A&M University-Commerce, Commerce, TX",
+                "LATITUDE": 33.240934,
+                "LONGITUDE": -95.910447,
+                "DEATHS": 2
+            },
+            {
+                "DATE": "9/16/2020",
+                "SCHOOL": "Sonora High, Sonora, CA",
+                "LATITUDE": 37.991471,
+                "LONGITUDE": -120.386007,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "2/26/2021",
+                "SCHOOL": "George Washington Carver High, New Orleans, LA",
+                "LATITUDE": 29.994587,
+                "LONGITUDE": -90.037034,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "3/1/2021",
+                "SCHOOL": "Watson Chapel Junior High, Pine Bluff, AR",
+                "LATITUDE": 34.190083,
+                "LONGITUDE": -92.065485,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/12/2021",
+                "SCHOOL": "Astin-East High, Knoxville, TN",
+                "LATITUDE": 35.990078,
+                "LONGITUDE": -83.887294,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "4/27/2021",
+                "SCHOOL": "Smyrna Middle School, Smyrna, DE",
+                "LATITUDE": 39.302821,
+                "LONGITUDE": -75.623938,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/13/2021",
+                "SCHOOL": "Washington Middle School, Albuquerque, NM",
+                "LATITUDE": 35.086491,
+                "LONGITUDE": -106.66189,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "8/27/2021",
+                "SCHOOL": "Academy Park High, Sharon Hill, PA",
+                "LATITUDE": 39.908255,
+                "LONGITUDE": -75.268021,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "9/1/2021",
+                "SCHOOL": "Mount Tabor High, Winston-Salem, NC",
+                "LATITUDE": 36.127042,
+                "LONGITUDE": -80.314147,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "10/13/2021",
+                "SCHOOL": "Grambling State University, Grambling, LA",
+                "LATITUDE": 32.520942,
+                "LONGITUDE": -92.718939,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "11/30/2021",
+                "SCHOOL": "Oxford High, Oxford Township, MI",
+                "LATITUDE": 42.838421,
+                "LONGITUDE": -83.261313,
+                "DEATHS": 4
+            },
+            {
+                "DATE": "11/30/2021",
+                "SCHOOL": "Humboldt High, Humboldt, TN",
+                "LATITUDE": 35.841794,
+                "LONGITUDE": -88.906644,
+                "DEATHS": 1
+            },
+            {
+                "DATE": "12/6/2021",
+                "SCHOOL": "Wilmington Park Ele. Wilmington, CA",
+                "LATITUDE": 33.786331,
+                "LONGITUDE": -118.246323,
+                "DEATHS": 1
+            }
+        ];
+            var map = new Microsoft.Maps.Map('#myMap');
+            var locations = [];
+
+            for (var i = 0; i < data.length; i++) {
+                locations.push(
+                    {
+                        "location": new Microsoft.Maps.Location(data[i].LATITUDE, data[i].LONGITUDE),
+                        "locationInfo": {
+                            "title": data[i].SCHOOL,
+                            "subTitle": data[i].DATE + ' (' + data[i].DEATHS + ' deaths)',
+                            "text": data[i].DEATHS,
+                        }
+                    }
+                );
+            }
+
+            var rect = Microsoft.Maps.LocationRect.fromLocations([locations[0].location, locations[1].location]);
+
+            locations.forEach((location, idx) => {
+                var pin = new Microsoft.Maps.Pushpin(location.location, location.locationInfo);
+
+                map.entities.push(pin);
+            });
+
+            map.setView({ bounds: rect, padding: 80 });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="myMap" style="position:relative;width:100%;height:100%;"></div>
+</body>
+
+</html>
